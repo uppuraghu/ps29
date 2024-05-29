@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         arr = prompt("Enter strings : ").split(" ");
+ vowels = "aeiouAEIOU";
+for ( str of arr) {
+  res = "";
+  vstr = [];
+  ind = 0;
+  c = 0;
+  for (i of str) {
+    if (vowels.includes(i)) {
+      vstr.push(i);
+      c++;
+    }
+  }console.log(vstr)
+  vstr = vstr.reverse().join("");
+  console.log(vstr)
+  if (c != 0) {
+    for (i in str) {
+      if (vowels.includes(str[i])) {
+        res = res + vstr[ind];
+        ind++;
+      } else {
+        res = res + str[i];
+      }
+    }
+  } else {
+    res = str.split("").sort().join("");
+  }
+  console.log(res);
+}
+
+
+
+rows = +prompt("Enter number of rows : ");
+ arr = [];
+ length = (rows * (rows + 1)) / 2;
+ num = 2;
+ primecount = 0;
+while (primecount < length) {
+   c = 0;
+  for ( j = 2; j < num; j++) {
+    if (num % j == 0) {
+      c++;
+      break;
+    }
+  }
+  if (c == 0) {
+    primecount++;
+    arr.push(num);
+  }
+  num++;
+}
+console.log(arr);
+for (i = 0; i < rows; i++) {
+  let s = "";
+  let ele = i;
+  let k = rows - 1;
+  for (j = 0; j <= i; j++) {
+    s = s + arr[ele] + " ";
+    ele = ele + k;
+    k--;
+  }
+  console.log(s);
+}
+
+
+str=prompt("enter a string: ")
+for(i=0;i<str.length;i++){
+    s=""
+    for(j=i;j<str.length;j++){
+        s+=str[j]+" "
+    }
+    console.log(s)
+}
+
+
+rows=+prompt("enter number of rows:") 
+for(i=1;i<=rows;i++){
+    s=""
+    for(j=1;j<=i;j++){
+        if((j%2)==1){
+            s+=" 1 " 
+        }
+        else{
+           s+="0"  
+        }
+    }
+    console.log(s)
+}
+    </script>
+</body>
+</html>
